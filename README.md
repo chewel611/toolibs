@@ -1,2 +1,2 @@
 # toolibs
-go常用的工具库
+go tool library
