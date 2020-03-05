@@ -9,5 +9,5 @@ func TestGetAddrs(t *testing.T) {
 		t.Log("获取不到地址")
 		return
 	}
-	t.Log(addrs)
+	t.Logf("addrs = %v", addrs)
 }

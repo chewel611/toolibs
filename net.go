@@ -6,7 +6,7 @@ import (
 
 // GetAddrs 获取本地所有地址
 func GetAddrs() (addresses []string) {
-	addresses = make([]string, 4)
+	addresses = make([]string, 2)
 	inters, err := net.Interfaces()
 	if err == nil {
 		for _, inter := range inters {
@@ -23,7 +23,7 @@ func GetAddrs() (addresses []string) {
 				continue
 			}
 			for _, addr := range addrs {
-				if ip, ok := addr.(*net.IPNet); ok {
+				if ip, ok := addr.(*net.IPNet); ok && ip.IP.To4() != nil {
 					addresses = append(addresses, ip.IP.String())
 				}
 			}
